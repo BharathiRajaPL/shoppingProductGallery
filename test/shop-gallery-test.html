@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../node_modules/web-component-tester/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/web-component-tester/browser.js"></script>
+   <script style="import" src="../dist/main.js"></script>
+   <link rel="stylesheet" href="../public/css/shop-gallery.css"/>
+<link rel="stylesheet" href="../public/css/product-carousel.css"/>
+</head>
+<body>
+   <test-fixture id="shop-gallery">
+    <shop-gallery shop-url="https://cors.io/?https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json"></shop-gallery>
+  </test-fixture>
+  <script type="module">
+    describe('<shop-gallery>', function() {
+      this.timeout(6000);
+      var shopGallery;
+      beforeEach(function() {
+        shopGallery = document.getElementById("shop-gallery");
+      });
+      
+      it('should exist', function(done) {
+        expect(shopGallery, "should exist").to.exist;
+        done();
+      });
+
+      it('should contains url', function(done) {
+        expect(shopGallery.querySelector("shop-gallery").getAttribute("shop-url")).to.exist;
+        done();
+      })
+
+    });
+  </script>
+</body>
+</html>

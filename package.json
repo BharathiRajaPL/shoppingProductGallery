@@ -1,0 +1,27 @@
+{
+  "name": "shop-gallery",
+  "version": "1.0.0",
+  "description": "Shop gallery to show prodct categories",
+  "main": "index.js",
+  "scripts": {
+    "headless-test": "true",
+    "start": "node index.js",
+    "test": "wct test --npm --module-resolution=node -wct-package-name=wct-browser-legacy",
+    "build-css": "node-sass  sass -o  public/css/",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.11.0",
+    "siema": "1.5.1",
+    "wct-browser-legacy": "^1.0.2"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.2.4",
+    "web-component-tester": "^6.9.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}

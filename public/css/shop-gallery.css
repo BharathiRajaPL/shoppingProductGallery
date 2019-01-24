@@ -1,0 +1,25 @@
+shop-gallery ul {
+  list-style: none; }
+
+shop-gallery li {
+  float: left;
+  padding: 10px;
+  position: relative;
+    position-cursor: poiter; }
+  shop-gallery li span {
+    display: block; }
+  shop-gallery li img {
+    display: block;
+    position: relative; }
+  shop-gallery li .product-name {
+    display: block;
+    font: "GT-Eesti 3r", Arial, sans-serif; }
+  shop-gallery li .product-price {
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font: bold 20px Helvetica, Sans-Serif;
+    letter-spacing: 1px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7); }
