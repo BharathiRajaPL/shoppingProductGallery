@@ -29,7 +29,7 @@ import Siema from 'siema';
     
     createProductGallery(shopData, ulElement) {
     	const listElement= document.createElement("li");
-    	this.constructProductNameElement(listElement, shopData.name);
+    	this.constructProductNameElement(listElement, shopData.name, shopData.links.www);
     	this.constructImageElement(listElement, shopData.hero);
     	this.constructPriceElement(listElement, shopData.priceRange);
         this.addModalListener(listElement, shopData);
@@ -42,17 +42,19 @@ import Siema from 'siema';
     	listElement.appendChild(imageTag);
     }
 
-    constructProductNameElement(listElement, productName) {
-    	const productNameElement = document.createElement("span");
-    	productNameElement.classList.add("product-name");
-    	productNameElement.innerHTML = productName;
-    	listElement.appendChild(productNameElement);
+    constructProductNameElement(listElement, productName, productUrl) {
+        const anchorElement = document.createElement("a");
+        anchorElement.href = productUrl;
+    	anchorElement.classList.add("product-name");
+        this.addClickListener(anchorElement);
+    	anchorElement.innerHTML = productName;
+    	listElement.appendChild(anchorElement);
     }
 
     constructPriceElement(listElement, priceData) {
     	const priceElement = document.createElement("span");
     	priceElement.classList.add("product-price");
-    	priceElement.innerHTML = `$${priceData.regular.low} - $${priceData.regular.high}`;
+    	priceElement.innerHTML = `$${priceData.selling.low} - $${priceData.selling.high}`;
     	listElement.appendChild(priceElement);
     }
 
@@ -87,6 +89,12 @@ import Siema from 'siema';
                 }
             })
         });
+    }
+
+    addClickListener(anchorElement) {
+        anchorElement.addEventListener('click', function(e) {
+            e.stopPropagation();
+        })
     }
 
 

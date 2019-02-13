@@ -5,7 +5,7 @@ shop-gallery li {
   float: left;
   padding: 10px;
   position: relative;
-    position-cursor: poiter; }
+    position-cursor: pointer; }
   shop-gallery li span {
     display: block; }
   shop-gallery li img {
@@ -13,7 +13,8 @@ shop-gallery li {
     position: relative; }
   shop-gallery li .product-name {
     display: block;
-    font: "GT-Eesti 3r", Arial, sans-serif; }
+    font: "GT-Eesti 3r", Arial, sans-serif;
+      font-cursor: pointer; }
   shop-gallery li .product-price {
     padding: 10px;
     position: absolute;
